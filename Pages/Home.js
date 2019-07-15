@@ -4,6 +4,7 @@ import Tabs from 'react-native-tabs';
 import NowPlaying from './NowPlaying.js'
 import SelectGenre from './SelectGenre.js'
 import Requests from './Requests.js'
+import SlidingUpPanel from 'rn-sliding-up-panel';
 
 
 const styles = StyleSheet.create({
@@ -23,8 +24,7 @@ const styles = StyleSheet.create({
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Welcome',
-    headerRight: <Button title="profile" onPress={() => this.props.navigation.navigate('Profile', {name: 'ak'})} />
+    header: null
   };
   constructor(props){
     super(props);
@@ -53,6 +53,13 @@ class HomeScreen extends React.Component {
       <View style={styles.container}>
 
       {this.renderPage(page)}
+      <Text>hiiiiiii</Text>
+      <SlidingUpPanel ref={c => this._panel = c}>
+          <View>
+            <Text>Here is the content inside panel</Text>
+            <Button title='Hide' onPress={() => this._panel.hide()} />
+          </View>
+        </SlidingUpPanel>
       <Tabs selected={this.state.page} style={{backgroundColor:'white'}}
               selectedStyle={{color:'red'}} onSelect={el=>this.setState({page:el.props.name})}>
             <Text name="NowPlaying" selectedIconStyle={{borderTopWidth:2,borderTopColor:'red'}}>Now Playing</Text>

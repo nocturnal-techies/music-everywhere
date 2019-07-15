@@ -3,7 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://ca-cn7.anonymous.music-everywhere.exp.direct",
+  "packagerNgrokUrl": "https://packager.ca-cn7.anonymous.music-everywhere.exp.direct",
+  "ngrokPid": 16414
 }
